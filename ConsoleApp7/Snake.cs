@@ -9,6 +9,8 @@ namespace ConsoleApp7
         Random random = new Random();
         public int x;
         public int y;
+        public char shape = 'O';
+
         public Snake()
         {
             x = random.Next(115);

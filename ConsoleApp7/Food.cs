@@ -9,6 +9,7 @@ namespace ConsoleApp7
         static Random random = new Random();
         public int x;
         public int y;
+        public char shape = '+';
 
         public Food()
         {
