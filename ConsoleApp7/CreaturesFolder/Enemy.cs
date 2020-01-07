@@ -34,7 +34,6 @@ namespace ConsoleApp7.Entities
                     this.y++;
                 } 
             }
-
         }
     }
 }

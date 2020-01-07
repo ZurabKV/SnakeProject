@@ -18,8 +18,9 @@ namespace ConsoleApp7
                 Screen.DrawScreen(snake, food, enemy);
                 Input.AcceptInput(snake);
                 enemy.MoveTowardsPlayer(snake);
-                Food.IfWasEaten(snake, ref food); //checks if food was eaten
-                Snake.IfWasKilled(ref snake, ref food, ref enemy); //checks if snake has crushed
+                food.MoveFromPlayer(snake);
+                Food.IfWasEaten(snake, ref food); 
+                Snake.IfWasKilled(ref snake, ref food, ref enemy); 
             }
         }
         

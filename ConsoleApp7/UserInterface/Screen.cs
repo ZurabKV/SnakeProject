@@ -12,7 +12,7 @@ namespace ConsoleApp7
         {
             Console.Clear();
             UI.DrawInterface();
-            PlayGround.DrawBorders();
+            PlayGround.DrawPlayGround();
             food.Draw();
             snake.Draw();
             enemy.Draw();

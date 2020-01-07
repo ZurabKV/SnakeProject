@@ -10,6 +10,10 @@ namespace ConsoleApp7
         public static int hight = 10;
         public static char shape = '#';
 
+        public static void DrawPlayGround()
+        {
+            DrawBorders();
+        }
         public static void DrawBorders()
         {
             for (int cursorY = 1; cursorY <= PlayGround.hight; cursorY++)
@@ -23,11 +27,6 @@ namespace ConsoleApp7
                     }
                 }
             }
-        }
-
-        public static void DrawInnerPart()
-        {
-
         }
     }
 }
