@@ -13,14 +13,10 @@ namespace ConsoleApp7
             Console.CursorVisible = false;
             while (true)
             {
-                Drawing.DrawScreen(snake, food);
-
-                if (snake.x==food.x && snake.y == food.y)
-                {
-                    food = new Food();
-                }
-
+                Screen.DrawScreen(snake, food);
                 Input.AcceptInput(snake);
+                Food.IfWasEaten(snake, ref food); //checks if food was eaten
+                Snake.IfWasCrushed(ref snake, ref food); //checks if snake has crushed
             }
         }
         

@@ -13,8 +13,16 @@ namespace ConsoleApp7
 
         public Food()
         {
-            x = random.Next(115);
-            y = random.Next(30);
+            x = random.Next(1, PlayGround.width-1);
+            y = random.Next(1, PlayGround.hight-1);
+        }
+
+        public static void IfWasEaten(Snake snake, ref Food food)
+        {
+            if(snake.x == food.x && snake.y == food.y) // eating mechanics
+            {
+                food = new Food();
+            }
         }
 
         

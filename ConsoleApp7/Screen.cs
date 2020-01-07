@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ConsoleApp7
 {
-    class Drawing
+    class Screen
     {
         public static void DrawScreen(Snake snake, Food food)
         {
@@ -41,7 +41,10 @@ namespace ConsoleApp7
             }
         }
 
-        
-        
+        public static void DrawScore()
+        {
+
+            Console.WriteLine(UI.score);
+        }
     }
 }
