@@ -9,7 +9,7 @@ namespace ConsoleApp7
     class Food: Creature
     {
         public override char shape => '+';
-        public override ConsoleColor Color => ConsoleColor.DarkGreen;
+        public override ConsoleColor CreatureColor => ConsoleColor.DarkGreen;
 
         public static void IfWasEaten(Snake snake, ref Food food)
         {

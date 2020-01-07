@@ -4,10 +4,17 @@ using System.Text;
 
 namespace ConsoleApp7.UserInterface
 {
-    class GameOverMessage
+    class GameOverMessage: UIElement
     {
-        public int value = 0;
-        public int x = PlayGround.width + 6;
-        public int y = 5;
+        public GameOverMessage(int line)
+            : base(line)
+        {
+            title = "Game-Over!!!";
+        }
+        public override void Print()
+        {
+            Console.SetCursorPosition(x, y);
+            Console.WriteLine(title);
+        }
     }
 }

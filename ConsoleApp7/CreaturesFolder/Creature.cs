@@ -12,7 +12,7 @@ namespace ConsoleApp7.Entities
         public Random random = new Random();
 
         public abstract char shape { get;}
-        public abstract ConsoleColor Color { get;}
+        public abstract ConsoleColor CreatureColor { get;}
 
         public Creature()
         {
@@ -23,7 +23,7 @@ namespace ConsoleApp7.Entities
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
-            Console.ForegroundColor = Color;
+            Console.ForegroundColor = CreatureColor;
             Console.Write(shape);
             Console.ForegroundColor = ConsoleColor.White;
         }

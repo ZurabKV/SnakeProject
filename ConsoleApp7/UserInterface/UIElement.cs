@@ -15,7 +15,7 @@ namespace ConsoleApp7.UserInterface
         {
             y = line;
         }
-        public void Print()
+        public virtual void Print()
         {
             Console.SetCursorPosition(x, y);
             Console.Write($"{title}: {value}");
