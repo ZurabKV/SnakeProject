@@ -35,9 +35,12 @@ namespace ConsoleApp7
         }
         public void MoveFromPlayer(Snake snake)
         {
+            if (Snake.stepsMade%2==0||Snake.stepsMade%3==0)
+            {
                 Cell chosenCell = SurroundingCells.OrderByDescending(cell => cell.DistanceToPlayer(snake)).Where(cell => cell.x != 0 && cell.y != 0 && cell.x != PlayGround.width - 1 && cell.y != PlayGround.hight - 1).First();
                 x = chosenCell.x;
-                y = chosenCell.y;
+                y = chosenCell.y; 
+            }
         }
     }
 }
