@@ -10,23 +10,8 @@ namespace ConsoleApp7
         {
 
             ConsoleKeyInfo key = Console.ReadKey();
-            
-            switch (key.Key)
-            {
-                case ConsoleKey.LeftArrow:
-                    snake.x--;
-                    break;
-                case ConsoleKey.RightArrow:
-                    snake.x++;
-                    break;
-                case ConsoleKey.UpArrow:
-                    snake.y--;
-                    break;
-                case ConsoleKey.DownArrow:
-                    snake.y++;
-                    break;
-            }
 
+            snake.Move(key);
         }
     }
 }

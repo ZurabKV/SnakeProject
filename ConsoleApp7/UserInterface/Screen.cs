@@ -11,11 +11,11 @@ namespace ConsoleApp7
         public static void DrawScreen(Snake snake, Food food, Enemy enemy)
         {
             Console.Clear();
-            PlayGround.DrawBorders();
             UI.DrawInterface();
+            PlayGround.DrawBorders();
             food.Draw();
-            enemy.Draw();
             snake.Draw();
+            enemy.Draw();
         }
     }
 }
