@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp7.UserInterface;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -17,11 +18,19 @@ namespace ConsoleApp7
             y = random.Next(1, PlayGround.hight-1);
         }
 
+        public void Draw()
+        {
+            Console.SetCursorPosition(x, y);
+            Console.Write(shape);
+        }
+
         public static void IfWasEaten(Snake snake, ref Food food)
         {
-            if(snake.x == food.x && snake.y == food.y) // eating mechanics
+            bool foodWasEaten = snake.x == food.x && snake.y == food.y;
+            if (foodWasEaten)
             {
                 food = new Food();
+                UI.score.value++;
             }
         }
 
