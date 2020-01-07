@@ -6,8 +6,8 @@ namespace ConsoleApp7
 {
     static class PlayGround
     {
-        public static int width = 16;
-        public static int hight = 7;
+        public static int width = 12;
+        public static int hight = 5;
         public static char shape = '#';
 
         public static void DrawBorders()
@@ -16,7 +16,7 @@ namespace ConsoleApp7
             {
                 for (int cursorX = 1; cursorX <= PlayGround.width; cursorX++)
                 {
-                    if (cursorY == 1 || cursorY == PlayGround.hight || cursorX == 1 || cursorX == PlayGround.width)
+                    if (cursorY == 1 || cursorY == PlayGround.hight || cursorX == 1 || cursorX == PlayGround.width) //checks if cursor is on first or last position
                     {
                         Console.SetCursorPosition(cursorX - 1, cursorY - 1);
                         Console.Write(PlayGround.shape);

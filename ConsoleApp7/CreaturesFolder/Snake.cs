@@ -1,28 +1,17 @@
-﻿using ConsoleApp7.UserInterface;
+﻿using ConsoleApp7.Entities;
+using ConsoleApp7.UserInterface;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ConsoleApp7
 {
-    class Snake
+    class Snake: Creature
     {
-        public int x;
-        public int y;
-        public char shape = 'O';
-
-        Random random = new Random();
-
-        public Snake()
-        {
-            x = random.Next(1, PlayGround.width - 1);
-            y = random.Next(1, PlayGround.hight - 1);
-        }
-        public void Draw()
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(shape);
-        }
+        public static int score=0;
+        public static int stepsMade=0;
+        public override char shape => 'O';
+        public override ConsoleColor Color => ConsoleColor.Magenta;
 
         public static void IfWasCrushed(ref Snake snake, ref Food food)
         {
@@ -34,7 +23,13 @@ namespace ConsoleApp7
                 food = new Food();
                 Console.WriteLine(UI.gamOverMessage);
                 Console.ReadKey();
-                UI.score.value = 0;
+                //UI.score.value = 0;
+                score = 0;
+                stepsMade = 0;
+            }
+            else
+            {
+                stepsMade++;
             }
         }
     }

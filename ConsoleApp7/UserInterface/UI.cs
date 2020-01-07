@@ -8,13 +8,13 @@ namespace ConsoleApp7.UserInterface
     static class UI
     {
         public static string gamOverMessage = "GAME OVER!!!";
-        public static Score score = new Score();
+        public static Score score = new Score(2);
+        public static StepsCounter stepsMade = new StepsCounter(3);
 
-        public static void DrawScore()
+        public static void DrawInterface()
         {
-            Console.SetCursorPosition(score.x, score.y);
-            Console.Write("Score: ");
-            Console.Write(score.value);
+            score.Print();
+            stepsMade.Print();
         }
     }
 }

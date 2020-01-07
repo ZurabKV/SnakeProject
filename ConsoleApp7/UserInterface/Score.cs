@@ -4,10 +4,13 @@ using System.Text;
 
 namespace ConsoleApp7.UserInterface
 {
-    class Score
+    class Score: UIElement
     {
-        public int value = 0;
-        public int x = PlayGround.width+6;
-        public int y = PlayGround.hight/4;
+        public override int value => Snake.score;
+        public Score(int line)
+            :base(line)
+        {
+            title = "Score";
+        }
     }
 }

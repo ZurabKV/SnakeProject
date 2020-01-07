@@ -8,8 +8,9 @@ namespace ConsoleApp7
     {
         public static void AcceptInput(Snake snake)
         {
-            ConsoleKeyInfo key = Console.ReadKey();
 
+            ConsoleKeyInfo key = Console.ReadKey();
+            
             switch (key.Key)
             {
                 case ConsoleKey.LeftArrow:
@@ -24,8 +25,8 @@ namespace ConsoleApp7
                 case ConsoleKey.DownArrow:
                     snake.y++;
                     break;
-
             }
+
         }
     }
 }
