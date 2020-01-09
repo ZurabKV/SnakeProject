@@ -6,7 +6,7 @@ namespace ConsoleApp7.UserInterface
 {
     class StepsCounter: UIElement
     {
-        public override int value => Snake.stepsMade;
+        public override int value => Player.stepsMade;
 
         public StepsCounter(int line)
             : base(line)

@@ -1,39 +1,37 @@
 ﻿using ConsoleApp7.CreaturesFolder;
+using ConsoleApp7.Environment;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ConsoleApp7.Entities
 {
-    class Enemy : Creature
+    class Enemy : OnePixelCreature
     {
         public override ConsoleColor CreatureColor => ConsoleColor.DarkRed;
 
         public override char shape => 'X';
 
-        public void MoveTowardsPlayer(Snake snake)
+        public List<Pixel> SurroundingCells => new List<Pixel>
         {
-            if (Snake.stepsMade%2==0)
+            new Pixel(pixel.x-1,pixel.y-1),
+            new Pixel(pixel.x,  pixel.y-1),
+            new Pixel(pixel.x+1,pixel.y-1),
+            new Pixel(pixel.x-1,pixel.y),
+            new Pixel(pixel.x+1,pixel.y),
+            new Pixel(pixel.x-1,pixel.y+1),
+            new Pixel(pixel.x,  pixel.y+1),
+            new Pixel(pixel.x+1,pixel.y+1),
+        };
+
+        public static List<Enemy> GetEnemies(int count)
+        {
+            List<Enemy> enemies = new List<Enemy>();
+            for (int i = 0; i < count; i++)
             {
-                int distanceToThePLayerX = this.x - snake.x;
-                int distanceToThePLayerY = this.y - snake.y;
-                if (distanceToThePLayerX > 0)
-                {
-                    this.x--;
-                }
-                if (distanceToThePLayerX < 0)
-                {
-                    this.x++;
-                }
-                if (distanceToThePLayerY > 0)
-                {
-                    this.y--;
-                }
-                if (distanceToThePLayerY < 0)
-                {
-                    this.y++;
-                } 
+                enemies.Add(new Enemy());
             }
+            return enemies;
         }
     }
 }

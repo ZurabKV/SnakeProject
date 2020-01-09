@@ -8,39 +8,31 @@ using System.Text;
 
 namespace ConsoleApp7
 {
-    class Food : Creature
+    class Food : OnePixelCreature
     {
         public override char shape => '+';
         public override ConsoleColor CreatureColor => ConsoleColor.DarkGreen;
-        public List<Cell> SurroundingCells => new List<Cell> 
+        public List<Pixel> SurroundingCells => new List<Pixel> 
         {
-            new Cell(x-1,y-1),
-            new Cell(x,  y-1),
-            new Cell(x+1,y-1),
-            new Cell(x-1,y),
-            new Cell(x+1,y),
-            new Cell(x-1,y+1),
-            new Cell(x,  y+1),
-            new Cell(x+1,y+1),
+            new Pixel(pixel.x-1,pixel.y-1),
+            new Pixel(pixel.x,  pixel.y-1),
+            new Pixel(pixel.x+1,pixel.y-1),
+            new Pixel(pixel.x-1,pixel.y),
+            new Pixel(pixel.x+1,pixel.y),
+            new Pixel(pixel.x-1,pixel.y+1),
+            new Pixel(pixel.x,  pixel.y+1),
+            new Pixel(pixel.x+1,pixel.y+1),
         };
 
-        public static void IfWasEaten(Snake snake, ref Food food)
+        public static void IfWasEaten(Player snake, ref Food food)
         {
-            bool foodWasEaten = snake.x == food.x && snake.y == food.y;
+            bool foodWasEaten = snake.pixel.x == food.pixel.x && snake.pixel.y == food.pixel.y;
             if (foodWasEaten)
             {
                 food = new Food();
-                Snake.score++;
+                Player.score++;
             }
         }
-        public void MoveFromPlayer(Snake snake)
-        {
-            if (Snake.stepsMade%2==0||Snake.stepsMade%3==0)
-            {
-                Cell chosenCell = SurroundingCells.OrderByDescending(cell => cell.DistanceToPlayer(snake)).Where(cell => cell.x != 0 && cell.y != 0 && cell.x != PlayGround.width - 1 && cell.y != PlayGround.hight - 1).First();
-                x = chosenCell.x;
-                y = chosenCell.y; 
-            }
-        }
+        
     }
 }

@@ -6,8 +6,8 @@ namespace ConsoleApp7
 {
     static class PlayGround
     {
-        public static int width = 25; //game area
-        public static int hight = 10;
+        public static int width = 30; //game area
+        public static int hight = 20;
         public static char shape = '#';
 
         public static void DrawPlayGround()

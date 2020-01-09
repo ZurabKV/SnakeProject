@@ -6,7 +6,7 @@ namespace ConsoleApp7.UserInterface
 {
     class Score: UIElement
     {
-        public override int value => Snake.score;
+        public override int value => Player.score;
         public Score(int line)
             :base(line)
         {

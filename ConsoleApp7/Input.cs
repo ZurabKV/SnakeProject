@@ -6,7 +6,7 @@ namespace ConsoleApp7
 {
     class Input
     {
-        public static void AcceptInput(Snake snake)
+        public static void AcceptInput(Player snake)
         {
 
             ConsoleKeyInfo key = Console.ReadKey();
